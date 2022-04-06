@@ -1,0 +1,26 @@
+<form (ngSubmit)="save()">
+
+    <div class="form-group">
+        <label for="carrierInput">Carrier</label>
+        <input type="carrierInput" class="form-control" name="carrierField" placeholder="Enter carrier"
+            [(ngModel)]=this.flight.carrier>
+    </div>
+    <div class="form-group">
+        <label for="sourceSelect">Source select</label>
+        <select class="form-control" type="sourceSelect" name="sourceField" [(ngModel)]=this.flight.source>
+            <option *ngFor="let s of this.getSources()" [ngValue]="s">
+                {{ s }}
+            </option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="destinySelect">Destination select</label>
+        <select class="form-control" type="destinySelect" name="destinyField" [(ngModel)]=this.flight.destination>
+            <option *ngFor="let d of this.getDests()" [ngValue]="d">
+                {{ d }}
+            </option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

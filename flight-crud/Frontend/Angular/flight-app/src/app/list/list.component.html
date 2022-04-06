@@ -1,0 +1,21 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th (click)="sortByCol('code')">code</th>
+            <th (click)="sortByCol('carrier')">carrier</th>
+            <th (click)="sortByCol('source')">source</th>
+            <th (click)="sortByCol('destination')">destination</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let f of list;let i=index">
+            <td>{{f.code}}</td>
+            <td>{{f.carrier}}</td>
+            <td>{{f.source}}</td>
+            <td>{{f.destination}}</td>
+            
+            <td> <button class="btn btn-warning" (click)="delete(f.code)">Delete</button> </td>
+            <!-- <td> <button class="btn btn-waring" (click)="delete(i)">Delete</button> </td> -->
+        </tr>
+    </tbody>
+</table>
